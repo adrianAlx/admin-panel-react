@@ -26,33 +26,37 @@ const Sidebar = () => {
       <div className="center">
         <ul>
           <p className="title">MAIN</p>
-          <NavLink to="/" style={{ textDecoration: 'none' }}>
-            <li>
+          <li>
+            <NavLink to="/" style={{ textDecoration: 'none' }}>
               <DashboardIcon className="icon" />
               <span>Dashboard</span>
-            </li>
-          </NavLink>
+            </NavLink>
+          </li>
+
           <p className="title">LISTS</p>
-          <NavLink to="/users" style={{ textDecoration: 'none' }}>
-            <li>
+          <li>
+            <NavLink to="/users" style={{ textDecoration: 'none' }}>
               <PersonOutlineIcon className="icon" />
               <span>Users</span>
-            </li>
-          </NavLink>
-          <NavLink to="/products" style={{ textDecoration: 'none' }}>
-            <li>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/products" style={{ textDecoration: 'none' }}>
               <StoreIcon className="icon" />
               <span>Products</span>
-            </li>
-          </NavLink>
+            </NavLink>
+          </li>
           <li>
-            <CreditCardIcon className="icon" />
-            <span>Orders</span>
+            <NavLink to="/orders" style={{ textDecoration: 'none' }}>
+              <CreditCardIcon className="icon" />
+              <span>Orders</span>
+            </NavLink>
           </li>
           <li>
             <LocalShippingIcon className="icon" />
             <span>Delivery</span>
           </li>
+
           <p className="title">USEFUL</p>
           <li>
             <InsertChartIcon className="icon" />
@@ -62,6 +66,7 @@ const Sidebar = () => {
             <NotificationsNoneIcon className="icon" />
             <span>Notifications</span>
           </li>
+
           <p className="title">SERVICE</p>
           <li>
             <SettingsSystemDaydreamOutlinedIcon className="icon" />
@@ -75,6 +80,7 @@ const Sidebar = () => {
             <SettingsApplicationsIcon className="icon" />
             <span>Settings</span>
           </li>
+
           <p className="title">USER</p>
           <li>
             <AccountCircleOutlinedIcon className="icon" />

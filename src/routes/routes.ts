@@ -15,6 +15,11 @@ interface Route {
   path: string;
   to: string;
 }
+interface RoutesPublicLayout {
+  ManiPath: string;
+  path: string;
+  Component: () => JSX.Element;
+}
 
 export const routes: Route[] = [
   {
@@ -31,11 +36,11 @@ export const routes: Route[] = [
   },
 ];
 
-export const routesPublicLayout = [
+export const routesPublicLayout: RoutesPublicLayout[] = [
   {
+    Component: List,
     ManiPath: 'users',
     path: '',
-    Component: List,
   },
   {
     Component: Single,
@@ -56,11 +61,27 @@ export const routesPublicLayout = [
   {
     Component: Single,
     ManiPath: 'products',
-    path: ':userId',
+    path: ':productId',
   },
   {
     Component: New,
     ManiPath: 'products',
+    path: 'new',
+  },
+
+  {
+    Component: List,
+    ManiPath: 'orders',
+    path: '',
+  },
+  {
+    Component: Single,
+    ManiPath: 'orders',
+    path: ':orderId',
+  },
+  {
+    Component: New,
+    ManiPath: 'orders',
     path: 'new',
   },
 ];
