@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 import { userColumns, userRows, UserRow } from '../../datatablesource';
@@ -8,6 +8,8 @@ import './datatable.scss';
 
 export const Datatable = () => {
   const [dataRows, setDataRows] = useState<UserRow[]>(userRows);
+
+  const { pathname } = useLocation();
 
   const handleDelete = (id: number) =>
     setDataRows(dataRows.filter(item => item.id !== id));
@@ -21,7 +23,7 @@ export const Datatable = () => {
       renderCell: param => (
         <div className="cellAction">
           <div className="viewButton">
-            <Link to="/users/test" style={{ textDecoration: 'none' }}>
+            <Link to={`${pathname}/test`} style={{ textDecoration: 'none' }}>
               View
             </Link>
           </div>
@@ -39,8 +41,8 @@ export const Datatable = () => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        Add New User
-        <Link to="/users/new" className="link">
+        Add New {pathname.charAt(1).toUpperCase() + pathname.slice(2, -1)}
+        <Link to={`${pathname}/new`} className="link">
           Add New
         </Link>
       </div>
