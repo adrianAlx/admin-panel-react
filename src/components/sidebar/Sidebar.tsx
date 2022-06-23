@@ -23,7 +23,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="top">
         <NavLink to="/">
-          <span className="logo">lamadmin</span>
+          <span className="logo">adradmin</span>
         </NavLink>
       </div>
 
