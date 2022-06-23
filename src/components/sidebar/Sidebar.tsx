@@ -1,24 +1,24 @@
 import './sidebar.scss';
 
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import CreditCardIcon from '@mui/icons-material/CreditCard';
-import StoreIcon from '@mui/icons-material/Store';
-import InsertChartIcon from '@mui/icons-material/InsertChart';
-import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
-import SettingsSystemDaydreamOutlinedIcon from '@mui/icons-material/SettingsSystemDaydreamOutlined';
-import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import InsertChartIcon from '@mui/icons-material/InsertChart';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
+import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
+import SettingsSystemDaydreamOutlinedIcon from '@mui/icons-material/SettingsSystemDaydreamOutlined';
+import StoreIcon from '@mui/icons-material/Store';
 import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <NavLink to="/" style={{ textDecoration: 'none' }}>
+        <NavLink to="/">
           <span className="logo">lamadmin</span>
         </NavLink>
       </div>
@@ -27,7 +27,7 @@ const Sidebar = () => {
         <ul>
           <p className="title">MAIN</p>
           <li>
-            <NavLink to="/" style={{ textDecoration: 'none' }}>
+            <NavLink to="/">
               <DashboardIcon className="icon" />
               <span>Dashboard</span>
             </NavLink>
@@ -35,19 +35,19 @@ const Sidebar = () => {
 
           <p className="title">LISTS</p>
           <li>
-            <NavLink to="/users" style={{ textDecoration: 'none' }}>
+            <NavLink to="/users">
               <PersonOutlineIcon className="icon" />
               <span>Users</span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/products" style={{ textDecoration: 'none' }}>
+            <NavLink to="/products">
               <StoreIcon className="icon" />
               <span>Products</span>
             </NavLink>
           </li>
           <li>
-            <NavLink to="/orders" style={{ textDecoration: 'none' }}>
+            <NavLink to="/orders">
               <CreditCardIcon className="icon" />
               <span>Orders</span>
             </NavLink>
