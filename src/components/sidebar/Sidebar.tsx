@@ -1,58 +1,66 @@
 import './sidebar.scss';
 
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import CreditCardIcon from '@mui/icons-material/CreditCard';
-import StoreIcon from '@mui/icons-material/Store';
-import InsertChartIcon from '@mui/icons-material/InsertChart';
-import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
-import SettingsSystemDaydreamOutlinedIcon from '@mui/icons-material/SettingsSystemDaydreamOutlined';
-import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import InsertChartIcon from '@mui/icons-material/InsertChart';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
+import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
+import SettingsSystemDaydreamOutlinedIcon from '@mui/icons-material/SettingsSystemDaydreamOutlined';
+import StoreIcon from '@mui/icons-material/Store';
 import { NavLink } from 'react-router-dom';
 
+import { useDarkMode } from '../../hooks/useDarkMode';
+
 const Sidebar = () => {
+  const { setDarkMode, setLightMode } = useDarkMode();
+
   return (
     <div className="sidebar">
       <div className="top">
-        <NavLink to="/" style={{ textDecoration: 'none' }}>
-          <span className="logo">lamadmin</span>
+        <NavLink to="/">
+          <span className="logo">adradmin</span>
         </NavLink>
       </div>
 
       <div className="center">
         <ul>
           <p className="title">MAIN</p>
-          <NavLink to="/" style={{ textDecoration: 'none' }}>
-            <li>
+          <li>
+            <NavLink to="/">
               <DashboardIcon className="icon" />
               <span>Dashboard</span>
-            </li>
-          </NavLink>
+            </NavLink>
+          </li>
+
           <p className="title">LISTS</p>
-          <NavLink to="/users" style={{ textDecoration: 'none' }}>
-            <li>
+          <li>
+            <NavLink to="/users">
               <PersonOutlineIcon className="icon" />
               <span>Users</span>
-            </li>
-          </NavLink>
-          <NavLink to="/products" style={{ textDecoration: 'none' }}>
-            <li>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/products">
               <StoreIcon className="icon" />
               <span>Products</span>
-            </li>
-          </NavLink>
+            </NavLink>
+          </li>
           <li>
-            <CreditCardIcon className="icon" />
-            <span>Orders</span>
+            <NavLink to="/orders">
+              <CreditCardIcon className="icon" />
+              <span>Orders</span>
+            </NavLink>
           </li>
           <li>
             <LocalShippingIcon className="icon" />
             <span>Delivery</span>
           </li>
+
           <p className="title">USEFUL</p>
           <li>
             <InsertChartIcon className="icon" />
@@ -62,6 +70,7 @@ const Sidebar = () => {
             <NotificationsNoneIcon className="icon" />
             <span>Notifications</span>
           </li>
+
           <p className="title">SERVICE</p>
           <li>
             <SettingsSystemDaydreamOutlinedIcon className="icon" />
@@ -75,6 +84,7 @@ const Sidebar = () => {
             <SettingsApplicationsIcon className="icon" />
             <span>Settings</span>
           </li>
+
           <p className="title">USER</p>
           <li>
             <AccountCircleOutlinedIcon className="icon" />
@@ -88,8 +98,8 @@ const Sidebar = () => {
       </div>
 
       <div className="bottom">
-        <div className="colorOption"></div>
-        <div className="colorOption"></div>
+        <div className="colorOption" onClick={() => setLightMode()}></div>
+        <div className="colorOption" onClick={() => setDarkMode()}></div>
       </div>
     </div>
   );

@@ -1,9 +1,10 @@
 import { AppRouter } from './routes/AppRouter';
+import { DarkModeProvider } from './context/darkModeContext';
 
 export const App = () => {
   return (
-    <div className="App">
+    <DarkModeProvider>
       <AppRouter />
-    </div>
+    </DarkModeProvider>
   );
 };

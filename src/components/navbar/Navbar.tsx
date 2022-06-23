@@ -1,14 +1,17 @@
-import SearchIcon from '@mui/icons-material/Search';
-import LanguageIcon from '@mui/icons-material/Language';
+import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import FullscreenExitOutlinedIcon from '@mui/icons-material/FullscreenExitOutlined';
-import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
-import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
+import LanguageIcon from '@mui/icons-material/Language';
 import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
+import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
+import SearchIcon from '@mui/icons-material/Search';
 
+import { useDarkMode } from '../../hooks/useDarkMode';
 import './navbar.scss';
 
 const Navbar = () => {
+  const { toggleDarkMode } = useDarkMode();
+
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -22,8 +25,8 @@ const Navbar = () => {
             <LanguageIcon className="icon" />
             <span>English</span>
           </div>
-          <div className="item">
-            <DarkModeOutlinedIcon className="icon" />
+          <div className="item" onClick={() => toggleDarkMode()}>
+            <DarkModeOutlinedIcon className="icon dark" />
           </div>
           <div className="item">
             <FullscreenExitOutlinedIcon className="icon" />

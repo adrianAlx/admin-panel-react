@@ -1,9 +1,9 @@
-import './list.scss';
+import { Datatable } from '../../components/datatable/Datatable';
 
 export const List = () => {
   return (
-    <div className="List">
-      <h1>List</h1>
+    <div className="listContainer">
+      <Datatable />
     </div>
   );
 };
