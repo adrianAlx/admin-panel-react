@@ -14,7 +14,11 @@ import SettingsSystemDaydreamOutlinedIcon from '@mui/icons-material/SettingsSyst
 import StoreIcon from '@mui/icons-material/Store';
 import { NavLink } from 'react-router-dom';
 
+import { useDarkMode } from '../../hooks/useDarkMode';
+
 const Sidebar = () => {
+  const { setDarkMode, setLightMode } = useDarkMode();
+
   return (
     <div className="sidebar">
       <div className="top">
@@ -94,8 +98,8 @@ const Sidebar = () => {
       </div>
 
       <div className="bottom">
-        <div className="colorOption"></div>
-        <div className="colorOption"></div>
+        <div className="colorOption" onClick={() => setLightMode()}></div>
+        <div className="colorOption" onClick={() => setDarkMode()}></div>
       </div>
     </div>
   );

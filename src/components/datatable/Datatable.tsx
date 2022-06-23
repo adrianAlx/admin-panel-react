@@ -41,7 +41,7 @@ export const Datatable = () => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        Add New {pathname.charAt(1).toUpperCase() + pathname.slice(2, -1)}
+        Add New {pathname[1].toUpperCase() + pathname.slice(2, -1)}
         <Link to={`${pathname}/new`} className="link">
           Add New
         </Link>
