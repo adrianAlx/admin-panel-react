@@ -5,6 +5,7 @@ import { PublicLayout } from '../layout/PublicLayout';
 import { List } from '../pages/list/List';
 import { Login } from '../pages/login/Login';
 import { New } from '../pages/new/New';
+import { productInputs, userInputs } from '../formSource';
 import { Single } from '../pages/single/Single';
 
 type JSXComponent = () => JSX.Element;
@@ -48,7 +49,7 @@ export const routesPublicLayout: RoutesPublicLayout[] = [
     path: ':userId',
   },
   {
-    Component: New,
+    Component: () => <New inputs={userInputs} title="Add New User" />,
     ManiPath: 'users',
     path: 'new',
   },
@@ -64,7 +65,7 @@ export const routesPublicLayout: RoutesPublicLayout[] = [
     path: ':productId',
   },
   {
-    Component: New,
+    Component: () => <New inputs={productInputs} title="Add New Product" />,
     ManiPath: 'products',
     path: 'new',
   },
@@ -80,7 +81,7 @@ export const routesPublicLayout: RoutesPublicLayout[] = [
     path: ':orderId',
   },
   {
-    Component: New,
+    Component: () => <New inputs={productInputs} title="Add New Order" />,
     ManiPath: 'orders',
     path: 'new',
   },
